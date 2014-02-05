@@ -138,6 +138,9 @@ nav {
 
 }
 
+.excerpt {
+  font-style: italic;
+}
 
 footer {
   background: #9e2812;
