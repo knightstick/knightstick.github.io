@@ -1,0 +1,158 @@
+/* main.css - Chris Jewell's Blog */
+
+/* Box-sizing for intuitive padding, margins etc. - Note browser specific props */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* cf class definitions - clearfix for float problems */
+.cf:before,
+.cf:after {
+content: " ";
+display: table;
+}
+.cf:after {
+clear: both;
+}
+.cf {
+*zoom: 1; /* for IE6 and IE7 */
+}
+
+
+/* main css selectors */
+
+body {
+  color: #ddd;
+  background: #333;
+  font-family: 'Open Sans', sans-serif; 
+}
+
+header {
+  background: #3f1f3f;
+}
+
+body > header {
+  box-shadow: rgba(0,0,0, .25) 0 15px 10px 0;
+  position: relative;
+  z-index: 10;
+}
+
+a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* class to center all major elements */
+.center-global {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.logo {
+  float: left;
+  margin-left: 3%;
+  margin-top: 3%;
+  border: solid 9px #333;
+  box-shadow: rgba(0,0,0, .5) 3px 3px 3px 0;
+}
+
+header h1 {
+  float: right;
+  padding-top: 2%;
+  padding-right: 2%;
+  font-family: 'Skranji', sans-serif;
+}
+
+.navbar {
+  clear: both;
+}
+
+nav {
+  padding-top: 2%;
+
+}
+
+  nav a {
+    color: #ddd;
+  }
+
+  nav ul {
+    list-style: none;
+  }
+    
+    nav ul li {
+      display: inline-block;
+      padding: 1% 5%;
+      width: 19%;
+      font-family: 'Skranji', sans-serif;
+      font-size: 100%;
+    }
+
+.main {
+  clear: both;
+  min-height: 255px;
+}
+
+  .content {
+    padding: 2% 5%;
+    clear: left;
+    padding-bottom: 2%;
+    overflow: hidden;
+  }
+
+    .content .thumb {
+      float: left;
+      margin-right: 3%;
+      margin-top: 3%;
+      border: solid 9px #444;
+      box-shadow: rgba(0,0,0, .5) 4px 4px 4px 0;
+      margin-bottom: 1%;
+    }
+    .content .thumb img {
+      opacity: 0.5;
+      background: yellow;
+    }    
+
+  .thumb-caption {
+    color: rgba(255,255,255, .25);
+    font-weight: lighter;
+    font-style: italic;
+    text-align: center;
+    display: inline-block
+    clear: both;
+    text-decoration: none;
+    max-width: 200px;
+  }
+
+  .thumb a {
+    text-decoration: none;
+  }
+
+.posts-list {
+
+}
+
+
+footer {
+  background: #9e2812;
+}
+
+.footer-inside {
+
+}
+
+.contact-footer {
+  float: left;
+  width: 75%;
+}
+
+.copyright {
+  float: left;
+  width: 25%;
+}
