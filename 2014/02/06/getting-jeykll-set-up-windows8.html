@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  
+    <title>Hello world - Chris Jewell|Getting Jekyll setup on Windows 8</title>
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Skranji' rel='stylesheet' type='text/css'>
+  </head>
+  
+  <body>
+
+    <header>
+
+	<div class="header-inside center-global">
+
+			
+		<a href="http://knightstick.github.io" class="logo-link">
+			<img src="http://knightstick.github.io/img/cj.jpg" alt="CJ #Selfie" class="logo">
+		</a>
+
+		<h1>Chris Jewell's Blog</h1>
+	</div> <!-- header inside -->
+		
+	<div class="navbar center-global">
+		<nav class="center-global">
+ 			<ul class="center-global">
+ 				<li><a href="http://knightstick.github.io/">Home</a></li>
+ 				<li><a href="http://knightstick.github.io/blog/">Blog</a></li>
+ 				<li><a href="http://knightstick.github.io/about/">About Me</a></li>
+ 				<li><a href="http://knightstick.github.io/contact/">Contact Me</a></li>
+			</ul>
+		</nav>
+	</div> <!-- navbar -->
+
+</header>
+
+    <div class="main cf center-global">
+      <div class="content">
+        
+
+        <h2>Jekyll, Ruby, Python, Pygments</h2>
+
+<p>In my <a href="/2014/01/14/first-post.html">last post</a>, I started to get to grips with the Markdown syntax, aiming towards publishing my own website with these very blog posts on. I still feel very much in the dark as to how this is all going to end up, but, how else can I learn by doing?</p>
+
+<p>I plan on using Jekyll - a tool for converting simple text to full &quot;blog-aware&quot; websites - to create a blog. (In fact, <em>SPOILER ALERT</em> :  it created the very post you&#39;re reading!)</p>
+
+<p>My first task is to try the <a href="http://jekyllrb.com/docs/quickstart/">Quick Start</a> instructions from the <a href="http://jekyllrb.com" title="Jekyll Website">Jekyll website</a>. It promises to be &quot;up and running in seconds&quot;, which is nice, but, as we&#39;ll see, it isn&#39;t that straightforward if you&#39;re new to this, like me, and, running Windows, like me...</p>
+
+<h2>Ruby</h2>
+
+<p>Jekyll is written in the Ruby programming language, which comes nicely preinstalled on OSx. That&#39;s nice, except, I&#39;m running Windows 8... Some quick Googling and I end up with <a href="#" title="Ruby Installer">Ruby Installer</a> for Windows. I install this, open up a new command prompt window and go for broke. </p>
+
+<p>First problem - I need to tell Windows where to find the program I&#39;m referring to when I type &#39;ruby&#39;. If I don&#39;t, the command prompt has no idea what a command like &#39;ruby --version&#39; is talking about.</p>
+
+<p>More poking around online and I discover I need to edit the <em>Environment Variables</em>, specifically the PATH environment variable, which, as I understand it, tells Windows which files to look in for executable files that you try to call from the command prompt. Windows 8 makes it relatively quick to find anything, pushing the windows key and typing &#39;enviro&#39; is enough to find the <em>Edit system environmental variables</em> setting. After adding the folder with the ruby executable file in (in my case &#39;C:\Ruby193\bin&#39;), then restarting my cmd.exe I can now call ruby --version and see the version of Ruby I&#39;m currently running.</p>
+
+<p>Ok, not too difficult, but, something I&#39;ve never done before.</p>
+
+<h2>Devkit</h2>
+
+<p>The next hurdle pops up almost immediately. Going back to the <a href="http://jekyllrb.com" title="Jekyll">Jekyll homepage</a> I obediently try the first line in the <a href="http://jekyllrb.com/docs/quickstart/">&quot;Quick Start&quot;</a> section. Another error:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="ss">ERROR</span><span class="p">:</span>  <span class="no">Error</span> <span class="n">installing</span> <span class="ss">jekyll</span><span class="p">:</span>
+        <span class="no">The</span> <span class="s1">&#39;fast-stemmer&#39;</span> <span class="n">native</span> <span class="n">gem</span> <span class="n">requires</span> <span class="n">installed</span> <span class="n">build</span> <span class="n">tools</span><span class="o">.</span>
+
+<span class="no">Please</span> <span class="n">update</span> <span class="n">your</span> <span class="no">PATH</span> <span class="n">to</span> <span class="kp">include</span> <span class="n">build</span> <span class="n">tools</span> <span class="ow">or</span> <span class="n">download</span> <span class="n">the</span> <span class="no">DevKit</span>
+<span class="n">from</span> <span class="s1">&#39;http://rubyinstaller.org/downloads&#39;</span> <span class="ow">and</span> <span class="n">follow</span> <span class="n">the</span> <span class="n">instructions</span>
+<span class="n">at</span> <span class="s1">&#39;http://github.com/oneclick/rubyinstaller/wiki/Development-Kit&#39;</span>
+</code></pre></div>
+
+<p>Turns out that some Ruby extensions require the development kit to be installed in order to work correctly. No problem, download, extract and install the devkit. It can be found alongside the Ruby installer and the simple commands &#39;ruby dk.rb init&#39; and &#39;ruby dk.rb install&#39; should do all we need. This all worked pretty straight-forwardly for me, but, looking at other people&#39;s attempts, it doesn&#39;t necessarily go as planned and some poking around the config.yml file can be needed.</p>
+
+<p>But not for me, Ruby AND the devkit now successfully installed.</p>
+
+<p>Now, line 1 of the <a href="http://jekyllrb.com/docs/quickstart/">Jekyll Quick Start guide</a> does what you&#39;d expect, and I&#39;ve successfully installed Jekyll!</p>
+
+<h2>Python and Pygments</h2>
+
+<p>As I plan on writing blogs with and about code, some syntax highlighting sounds nice. All I need is Python and Pygments.</p>
+
+<p>I&#39;ve got some experience of using Enthought Canopy to interact with and write for Python, and after installing Ruby, getting Python to work with my command prompt followed many of the same steps, including editing the PATH environment variable.</p>
+
+<p>The next bit is where I started to get really confused. </p>
+
+<h2>Like a Version</h2>
+
+<p>Many of the components I&#39;ve set up are the latest version available, as you would expect these will be the ones that work. That&#39;s just not true in this case. To get all the parts to play nicely together, it seems like you have to have particular versions. For example, pygments.rb 0.4.2 works well, but, version 0.5.0 doesn&#39;t. Finally, I got each piece in the puzzle in the right form, and assembled it all together. At first, it seemed to be working, but, bits wouldn&#39;t work the way you&#39;d expect, for example the --watch flag, but, again, once all the programs involved were the right versions, it all finally clicked into place.</p>
+
+<h2>Get up and running in <em>seconds</em>...</h2>
+
+<p>...if you&#39;re running OSx.</p>
+
+<p>Windows 8 can be set up to run Jekyll, but, for someone of my experience, it takes A LOT LONGER than <em>seconds</em>.</p>
+
+<p>But, for now, I have Jekyll working and have managed to follow the &quot;Quick Start&quot; instructions and have Jekyll set me up a basic site directory and structure. Lovely.</p>
+
+
+      </div><!-- content -->
+    </div>
+
+    	<footer class="cf">
+
+		<div class="footer-inside center-global cf">
+
+			<div class="contact-footer cf">
+
+				<h2>Contact Me</h2>
+				<ul>
+					<li><a href="mailto:chrisjohnjewell@gmail.com">email</a></li>
+					<li><a href="http://www.facebook.com/knightstick">facebook</a></li>
+					<li><a href="http://www.codecademy.com/users/knightstick">codecademy</a></li>
+					<li><a href="http://www.codewars.com/users/knightstick">codewars</a></li>
+					<li><a href="https://github.com/knightstick">github</a></li>
+				</ul>
+
+			</div>
+
+			<div class="copyright">
+				<p>Copyright Chris Jewell 2014</p>
+			</div> <!-- copyright -->
+
+		</div> <!-- footer-inside -->
+
+	</footer>
+
+  </body>
+</html>
+
+
+
