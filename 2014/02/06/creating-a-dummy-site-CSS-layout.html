@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  
+    <title>Hello world - Chris Jewell|Creating a Dummy Site - CSS Layout</title>
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Skranji' rel='stylesheet' type='text/css'>
+  </head>
+  
+  <body>
+
+    <header>
+
+	<div class="header-inside center-global">
+
+			
+		<a href="" class="logo-link">
+			<img src="/img/cj.jpg" alt="CJ #Selfie" class="logo">
+		</a>
+
+		<h1>Chris Jewell's Blog</h1>
+	</div> <!-- header inside -->
+		
+	<div class="navbar center-global">
+		<nav class="center-global">
+ 			<ul class="center-global">
+ 				<li><a href="/">Home</a></li>
+ 				<li><a href="/blog/">Blog</a></li>
+ 				<li><a href="/about/">About Me</a></li>
+ 				<li><a href="/contact/">Contact Me</a></li>
+			</ul>
+		</nav>
+	</div> <!-- navbar -->
+
+</header>
+
+    <div class="main cf center-global">
+      <div class="content">
+        
+        <div class="thumb">
+          <a href="/img/dummy-site01.jpg" alt="My site after being "Normalized".">
+            <img src="/img/dummy-site01-thumb.jpg">
+          <div class="thumb-caption">
+            My site after being "Normalized".
+          </div>
+          </a>    
+        </div>
+        
+
+        <h2>Long live the jazz</h2>
+
+<p>Last time I made a &quot;dummy&quot; site skeleton in HTML in order to inform my decisions when it comes to creating a fully-functional, easily-updatable Jekyll website.</p>
+
+<p>Next step, use some CSS to jazz things up a bit!</p>
+
+<h2>Normalize.css</h2>
+
+<p>The way different browsers disply the same web page can be very different, escpecially on older browsers, so, in order to start my page off on a level footing, I&#39;m using a CSS sheet called &quot;Normalize.css&quot;. This is an open source CSS file that &quot;makes browsers render all elements more consistently and in line with modern standards.&quot; You can read more about it <a href="http://git.io/normailize">here</a>.</p>
+
+<h2>Laying it out there</h2>
+
+<p>At first, I&#39;ve decided to make a site with an inherent width, that, when the window is WIDER than the content, centres itself in the middle of the browser. Everntually I plan on investigating the new @media rules in order to have a site that responds to different browser widths and looks good on other devices (such as phones and tablets), but for now, this will do for my needs.</p>
+
+<h3>Box-Sizing</h3>
+
+<p>I started by defining the following bit of CSS on *, the universal selector. This means it is applied to every element of the page (unless overwritten with higher precedence later on in the stylesheet.)</p>
+
+<div class="highlight"><pre><code class="css"><span class="o">*</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Effectively, this makes each element behave more like you would expect (or, it feels more intuitive to me) when changing margins, padding etc. The browser-specific properties help to future-proof the CSS, so that if it is not fully supported yet, it will still do what you expect... mostly. </p>
+
+<p>By setting the value to border-box, when we play around with the padding and margin, the overall size of the element doesn&#39;t change, which, for me, is very helpful in getting the layout to look the way I want.</p>
+
+<p>With all this in place, we can work towards getting the elements to sit where we want, and behave the way we want around each other. The way I want my page to behave is to have a fixed width section that centres itself on wide screens. For an element to do this, we can our CSS like so:</p>
+
+<div class="highlight"><pre><code class="html">.main {
+    width: 1000px;
+    margin: 0 auto;
+}
+</code></pre></div>
+
+<p>This sets a fixed width on my div with the class &quot;main&quot;, and, using a bit of shorthand, sets the top and bottom margins to zero, and the left and right margins to &quot;auto&quot;; this effectively gets the div to sit in the centre of the window, as we would like.</p>
+
+<p>Rather than adding these properties to all my sections of content, I&#39;ve defined them on a class called &quot;center-global&quot; and then added this class to any element I want to have these properties (like the header, main section and footer). This saves me from having the </p>
+
+<div class="highlight"><pre><code class="html">width: 1000px;
+margin: 0 auto;
+</code></pre></div>
+
+<p>repeated throughout the stylesheet.</p>
+
+<h3>Aside</h3>
+
+<p>I realise that I&#39;m going backwards and forwards between the UK and US spelling of &quot;centre&quot;. I feel better writing the word in the UK spelling when using it outside of code, but, to fit in with convention (and syntax), use the US &quot;center&quot;. Probably just pedantic to use &quot;centre&quot; as well, but hey...</p>
+
+<h2>Overall structure</h2>
+
+<p>The way I structured my HTML was to put extra divs inside of the header, main and footer elements, and then set these INSIDE elements to centre themselves. In this way, the &quot;header&quot; element stretches the entire width of the screen, but, the inside div has a fixed width and won&#39;t expand further across the screen than the width I&#39;ve set for it. This is similar in the main and footer section, effectively restricting the width of the content, but not the page.</p>
+
+<h2>Float on</h2>
+
+<p>The area of CSS I&#39;ve found to be the most confusing so far is the layout, positioning and floating aspects. Occasionally everything works as I&#39;d expect, but, mostly, things blow up and appear somewhere entirely different to where I wanted them to, or, sometimes don&#39;t appear at all.</p>
+
+<p>I imagine the more CSS layouts I work on, the more it&#39;ll come to me, but, there&#39;s something slightly mysterious about the way all the elements interact with each other that I&#39;ve not quite got a grasp on yet.</p>
+
+<p>Having said that, in a simple website like this one, things aren&#39;t too bad. My header image (a &quot;selfie&quot; I took after losing $100 in the casino in Singapore), when set to 
+&#39;float: left;&#39; nicely clears my h1 title. Similarly, after adding an image to the &quot;site intro&quot; section (an Instagram photo taken inside the aforementioned casino), it can be floated so that the text surrounds it nicely.</p>
+
+<p>Once I tried putting background colors on various elements however, I found that not everything was working the way I expected. After some research, I found that it was due to the &quot;parent&quot; containers &quot;collapsing&quot; due to the float behaviour. </p>
+
+<p>The following bit of code, known as a &quot;clearfix&quot;, comes to the rescue: </p>
+
+<div class="highlight"><pre><code class="css"><span class="c">/* cf class definitions - clearfix for float problems */</span>
+<span class="nc">.cf</span><span class="nd">:before</span><span class="o">,</span>
+<span class="nc">.cf</span><span class="nd">:after</span> <span class="p">{</span>
+<span class="k">content</span><span class="o">:</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+<span class="k">display</span><span class="o">:</span> <span class="n">table</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.cf</span><span class="nd">:after</span> <span class="p">{</span>
+<span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.cf</span> <span class="p">{</span>
+<span class="o">*</span><span class="n">zoom</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span> <span class="c">/* for IE6 and IE7 */</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Now, I can use the &#39;cf&#39; class on my containers, and, fingers-crossed, everything should be where we want it to be!</p>
+
+<p><br>
+<a href="/img/dummy-site03.jpg"><img src="/img/dummy-site03-thumb.jpg" alt="dummy-site03"></a></p>
+
+<p>Using a combination of floats and widths I created a basic layout for my dummy site, with everything sitting where I wanted it to, but, lacking any real style... Onwards and upwards!</p>
+
+
+      </div><!-- content -->
+    </div>
+
+    	<footer class="cf">
+
+		<div class="footer-inside center-global cf">
+
+			<div class="contact-footer cf">
+
+				<h2>Contact Me</h2>
+				<ul>
+					<li><a href="mailto:chrisjohnjewell@gmail.com">email</a></li>
+					<li><a href="http://www.facebook.com/knightstick">facebook</a></li>
+					<li><a href="http://www.codecademy.com/users/knightstick">codecademy</a></li>
+					<li><a href="http://www.codewars.com/users/knightstick">codewars</a></li>
+					<li><a href="https://github.com/knightstick">github</a></li>
+				</ul>
+
+			</div>
+
+			<div class="copyright">
+				<p>Copyright Chris Jewell 2014</p>
+			</div> <!-- copyright -->
+
+		</div> <!-- footer-inside -->
+
+	</footer>
+
+  </body>
+</html>
+
+
+

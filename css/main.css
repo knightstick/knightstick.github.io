@@ -134,6 +134,15 @@ nav {
     text-decoration: none;
   }
 
+.content p img {
+  float: right;
+  margin-left: 3%;
+  margin-top: 3%;
+  border: solid 9px #444;
+  box-shadow: rgba(0,0,0, .5) 4px 4px 4px 0;
+  margin-bottom: 1%;
+}
+
 .posts-list {
 
 }
