@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  
+    <title>Creating a Dummy Site - CSS Styling | Hello world, Learning to code in 2014</title>
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Skranji' rel='stylesheet' type='text/css'>
+  </head>
+  
+  <body>
+
+    <header>
+
+	<div class="header-inside center-global">
+
+			
+		<a href="" class="logo-link">
+			<img src="/img/cj.jpg" alt="CJ #Selfie" class="logo">
+		</a>
+
+		<p><h1>Hello, world:</h1><h2>Learning to Code</h2></p>
+	</div> <!-- header inside -->
+		
+	<div class="navbar center-global">
+		<nav class="center-global">
+ 			<ul class="center-global">
+ 				<li><a href="/">Home</a></li>
+ 				<li><a href="/blog/">Blog</a></li>
+ 				<li><a href="/about/">About Me</a></li>
+ 				<li><a href="/contact/">Contact Me</a></li>
+			</ul>
+		</nav>
+	</div> <!-- navbar -->
+
+</header>
+
+    <div class="main cf center-global">
+      <div class="content">
+        <h1>Creating a Dummy Site - CSS Styling</h1>
+
+        
+
+        <h2>The Colour and the Shape</h2>
+
+<p>I&#39;ve now created a &quot;dummy&quot; site&#39;s skeleton in HTML, and used some CSS to give it some kind of layout, rather than have each element sit in a vertical line. It&#39;s looking much better, but, until we give it a bit of colour and style it looks very old skool. Let&#39;s give it a bit of style! </p>
+
+<p>Using CSS to implement a colour-scheme is really quite easy, however, for me, I find choosing a scheme that works to be quite difficult. Maybe I&#39;m not cut out for a career in interior design, but, hey!</p>
+
+<p>As this is (at the moment) a blog about Jekyll, I used the nicely designed <a href="http://jekyllrb.com" title="jekyllrb.com">Jekyllrb</a> website as a guide to some colours to pick. I chose a pretty typical grey background, offset with a nice purple header, red footer and light grey text.</p>
+
+<p>With all the colours picked, it&#39;s just a case of using the &#39;background&#39; and &#39;color&#39; properties to set the colours of the elements to what you want them to be. Again here, it took a bit of adjusting the layout CSS to make sure that the background filled the whole section I expected it to, again using the &#39;cf&#39; class to make sure the parent containers didn&#39;t collapse due to floating elements.</p>
+
+<p>I opted to use one selector to change the &#39;text-decoration&#39; of all the links/anchor tags to none, and the &#39;:hover&#39; pseudoclass to underline links when they are moused over. I think this looks a lot more modern, especially compared to the very old fashioned blue underlined links that HTML provides us.</p>
+
+<h2>Box-shadow</h2>
+
+<p>A property that, for me, improves the look of a page very easily is the box-shadow property. It is a CSS3 property that, when applied delicately, can add a nice extra dimension to a page.</p>
+
+<p>It can take 6 values, including horizontal and vertical positions, optional blur and spread distances, a color (default is black, but I like using rgba values to play with the opacity) and an optional inset argument that changes the shadow from an outer shadow (outset) to an inset shadow.</p>
+
+<p>I applied these to my header, header image and images in the main content. Overuse of this can look tacky, but, in small doses, I think it works wonders.</p>
+
+<h2>Fonts and Webfonts</h2>
+
+<p>One of the most exciting new elements of CSS is building fonts into your pages, whether through the @font-family rules or linking to them (like the quick-use Google font links).</p>
+
+<p>When I first realised that different users would see different fonts based on Operating System, browser, settings etc. it made me realise how adaptable web pages need to be. The way it appears on my monitor can be entirely different to how it appears on a friends phone or a strangers huge HD monitor. </p>
+
+<p>However, embedding or linking to fonts gives us another tool in having some idea how it will display on another device. </p>
+
+<p>Using Google&#39;s webfonts system is extremely easy, and, uses a link in the head of your HTML to link the user to the fonts you wish to use. This won&#39;t work for EVERY user, but, as long as you have some backup font rules written in, you can ensure that people will see at least something similar to what you intend them to.</p>
+
+<h2>Not such a dummy after all</h2>
+
+<p><a href="/img/dummy-site04.jpg"><img src="/img/dummy-site04-thumb.jpg" alt="dummy-site04"></a></p>
+
+<p>After all this, I&#39;m left with a site that looks like this:</p>
+
+<p>It&#39;s looking a heck of a lot nicer with all the CSS, and, will be a great help when I come to create layouts and templates for my Jekyll site later.</p>
+
+<p>Next up, I&#39;m going to use my Dummy site to help inform my choices when it comes to making a site that Jekyll will help me to build!</p>
+
+
+      </div><!-- content -->
+    </div>
+
+    	<footer class="cf">
+
+		<div class="footer-inside center-global cf">
+
+			<div class="contact-footer cf">
+
+				<h2>Contact Me</h2>
+				<ul>
+					<li><a href="mailto:chrisjohnjewell@gmail.com">email</a></li>
+					<li><a href="http://www.facebook.com/knightstick">facebook</a></li>
+					<li><a href="http://www.codecademy.com/users/knightstick">codecademy</a></li>
+					<li><a href="http://www.codewars.com/users/knightstick">codewars</a></li>
+					<li><a href="https://github.com/knightstick">github</a></li>
+				</ul>
+
+			</div>
+
+			<div class="copyright">
+				<p>Copyright Chris Jewell 2014</p>
+			</div> <!-- copyright -->
+
+		</div> <!-- footer-inside -->
+
+	</footer>
+
+  </body>
+</html>
+
+
+
