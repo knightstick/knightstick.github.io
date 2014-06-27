@@ -1,0 +1,138 @@
+/* Start of "Micro clearfix" */
+
+.cf { zoom: 1; }
+.cf:before,
+.cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+
+/* End of "Micro clearfix" */
+
+/* Appearance */
+
+body {
+	background-color: #FFFEE0;
+}
+
+main {
+	background-color: #FFF9DB;
+}
+
+.col {
+	background-color: #FFFDD4;	
+	border: none;
+	overflow: hidden;
+
+}
+
+
+#logo {
+	position: relative;
+	line-height: 75px;
+
+}
+
+#logo-text {
+	font-size: 30px;
+	text-align: center;
+	width: 100%;
+}
+
+
+/* Interaction */
+
+.col {
+	box-shadow: 1px 1px 3px #A1A085;
+	transition: box-shadow 0.1s, translate 0.1s;	
+}
+
+.col:hover, .col:active {
+	box-shadow: 2px 2px 6px #A1A085;
+	transform: translate(-1px, -1px);
+}
+
+.col:active {
+	background-color: #E0DFBB;
+}
+
+/* Proportions */
+
+main {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.col {
+	float: left;
+	box-sizing: border-box;
+	margin: 0 0 10px 1%;
+}
+
+/* 12 Column Rules */
+
+.span3 {
+	width: 23.75%;
+}
+
+.span6 {
+	width: 48.5%;
+}
+
+.span9 {
+	width: 73.25%;
+}
+
+.span12 {
+	width: 98%;
+}
+
+/* Heights (Fixed at the moment) */
+
+.height1 {
+	height: 75px;
+}
+
+.height2 {
+	height: 160px; /* 2*h + 10 */
+}
+
+.height3 {
+	height: 245px; /* 3*h + 20 */
+}
+
+/* Box has a larger box to the right */
+
+.mainright {
+	float: right;
+	margin: 0 1% 10px 0;
+}
+
+@media screen and (max-width: 760px) {
+
+	#logo , nav.col{
+		float: none;
+		clear: both;
+		width: 100%;
+	}
+
+	nav.col {
+		height: 25px;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	#logo, nav.col, .span6 {
+		float: none;
+		clear: both;
+		width: 100%;
+	}
+
+	nav.col {
+		height: 25px;
+	}
+
+	.span3 {
+		width: 48.5%;
+	}
+}
