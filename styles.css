@@ -88,15 +88,15 @@ main {
 /* Heights (Fixed at the moment) */
 
 .height1 {
-	height: 75px;
+	height: 200px;
 }
 
 .height2 {
-	height: 160px; /* 2*h + 10 */
+	height: 410px; /* 2*h + 10 */
 }
 
 .height3 {
-	height: 245px; /* 3*h + 20 */
+	height: 620px; /* 3*h + 20 */
 }
 
 /* Box has a larger box to the right */
@@ -120,7 +120,7 @@ main {
 
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 640px) {
 
 	#logo, nav.col, .span6 {
 		float: none;
