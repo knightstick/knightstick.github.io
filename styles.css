@@ -88,15 +88,15 @@ main {
 /* Heights (Fixed at the moment) */
 
 .height1 {
-	height: 200px;
+	height: 150px;
 }
 
 .height2 {
-	height: 410px; /* 2*h + 10 */
+	height: 310px; /* 2*h + 10 */
 }
 
 .height3 {
-	height: 620px; /* 3*h + 20 */
+	height: 470px; /* 3*h + 20 */
 }
 
 /* Box has a larger box to the right */
