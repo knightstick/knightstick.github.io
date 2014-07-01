@@ -115,7 +115,7 @@ main {
 	}
 
 	nav.col {
-		height: 25px;
+		height: 100px;
 	}
 
 }
@@ -126,10 +126,6 @@ main {
 		float: none;
 		clear: both;
 		width: 100%;
-	}
-
-	nav.col {
-		height: 100px;
 	}
 
 	.span3 {
